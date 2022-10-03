@@ -1,0 +1,23 @@
+// ExampleHIDL is our custom HIDL Folder Name 
+// and we define its version via '@1.0' and vice versa depending on subfolder name
+ 
+package android.hardware.ExampleHIDL@1.0;
+
+// 'generates' is a type of an return statement, its returning 
+// certain values in below code
+ 
+interface IExampleHIDL {
+
+// 1: read is taking argument size in bytes and parameters is size 
+// and is generating two return types, one is result and other is string.
+	hello_read(sizeInBytes size) generates (Result result, string buffer);
+
+// 2: hello_write is taking only one argument 'string buffer' and returning 
+// only one value that is result.
+	hello_write(string buffer) generates (Result result);
+
+// 3: hello_test is taking one argument which is integer, in this case its name 'example_var'
+// and its returning only one integer value 
+	hello_test(int32_t example_var) generates (int32_t valueret);
+};
+

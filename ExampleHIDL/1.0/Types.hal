@@ -1,0 +1,8 @@
+package android.hardware.ExampleHIDL@1.0
+
+enum Result : int32_t {
+	OK,
+	PERMISSION_DENIED 	= -1,
+	};
+
+typedef uint32_t sizeInBytes;
